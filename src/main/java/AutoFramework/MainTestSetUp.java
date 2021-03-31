@@ -1,5 +1,6 @@
 package AutoFramework;
 
+import AutoFramework.Utilities.Log;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -100,5 +101,6 @@ public class MainTestSetUp {
 
     public void mainTestTearDown(){
         this.driver.quit();
+        Log.endTestDetails();
     }
 }

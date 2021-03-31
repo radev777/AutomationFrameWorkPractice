@@ -1,4 +1,4 @@
-package AutomationTests.LoginTests;
+package AutomationTests;
 
 import AutoFramework.MainTestSetUp;
 import AutoFramework.Utilities.Log;
@@ -35,7 +35,7 @@ public class LoginTestDDT extends MainTestSetUp {
         try {
             Log.startTestDetails(this.getClass().getSimpleName());
             Log.info("Open home page");
-            HomePage homePage = new HomePage(driver);
+            HomePage homePage = new HomePage(driver,this.getUsername());
             homePage.navigateTo(this.getMainURL());
             LoginPage loginPage = homePage.openSingInPage();
             //validate email

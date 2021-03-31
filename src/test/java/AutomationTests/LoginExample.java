@@ -1,5 +1,4 @@
-package AutomationTests.LoginTests;
-
+package AutomationTests;
 
 import AutoFramework.MainTestSetUp;
 import ObjectPages.HomePage;
@@ -35,7 +34,7 @@ public class LoginExample  {
         //driver.close();
         driver.quit();
     }
-
+    @Ignore
     @Test
     public void simpleLogin() {
         String url = "http://automationpractice.com/index.php";
@@ -69,12 +68,14 @@ public class LoginExample  {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_form")));
     }
-
+    @Ignore
     @Test
     public void pomLogin() {
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(driver,"");
         homePage.navigateTo("");
         LoginPage loginPage = homePage.openSingInPage();
+
+        loginPage.goToHomePage();
         //validate email
         try {
             loginPage.login("test123@abv.bg", "123456");
@@ -86,6 +87,7 @@ public class LoginExample  {
         homePage.closePage();
     }
 
+    @Ignore
     @Test
     public void pomPagefactoryLogin() {
     /*    PageFactory.initElements(driver, HomePageFactory.class);
